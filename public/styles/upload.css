@@ -1,8 +1,105 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+input {
+  line-height: normal;
+}
+label,
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.header {
+  padding: 2rem;
+  width: 100%;
+  background-color: #6631f1;
+}
+.header i {
+  font-size: 3rem;
+  color: white;
+}
+
 .container {
-  margin: 0 35rem;
-  padding: 4rem;
-  border: 1px solid black;
+  padding: 0 55rem;
+}
+
+.custom-file-input {
+  width: 100%;
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Select some files";
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 1rem 2rem;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.form_upload {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  border: dashed 1px;
+}
+.title-input {
+  margin-top: 2rem;
+}
+.title-input input {
+  width: 100%;
+  padding: 1rem;
+}
+
+.form_upload form button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
 }

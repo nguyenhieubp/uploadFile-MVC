@@ -1,7 +1,9 @@
 const Image = require("../models/Image.schema");
 
 module.exports.single = async (req, res) => {
-  const newImage = new Image({ url: `/uploads/${req.file.filename}` });
+  const newImage = new Image({
+    url: `/uploads/${req.file.filename}`,
+  });
   try {
     newImage.save();
     res.redirect("/");
@@ -13,11 +15,7 @@ module.exports.single = async (req, res) => {
 
 module.exports.deleteImages = async (req, res) => {
   const imageId = req.params.id;
+  console.log(imageId);
   await Image.findByIdAndDelete(imageId);
-  res.redirect("/upload/show");
-};
-
-module.exports.getImages = async (req, res) => {
-  const images = await Image.find();
-  res.render("listImage", { images });
+  res.redirect("/");
 };

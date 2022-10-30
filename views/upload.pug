@@ -4,14 +4,19 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
         link(rel="stylesheet", href="./styles/upload.css")
         title Document
-    body 
-     h1 Upload File 
+    body
+     div(class="header") 
+       a(href="/") 
+          i.fas.fa-home
      div(class="container")
-      form(action="/upload/single", method="post",  enctype="multipart/form-data") 
-        input(type="file", name="image")
-        br
-        button(type="submit") Submit
+       div(class="form_upload")
+            form(action="/upload/single", method="post",  enctype="multipart/form-data") 
+                input(type="file", name="image", class="custom-file-input")
+                button(type="submit") Submit
+                
+    
      
 

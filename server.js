@@ -12,11 +12,15 @@ app.use(express.static("public"));
 const connectDB = require("./configs/connectDB");
 connectDB();
 
-const routerUploadFile = require("./routers/upload.router");
-app.get("/", (req, res) => {
-  res.render("home");
+//HOME
+const Image = require("./models/Image.schema");
+app.get("/", async (req, res) => {
+  const images = await Image.find();
+  res.render("home", { images });
 });
 
+//ROUTER
+const routerUploadFile = require("./routers/upload.router");
 app.use("/upload", routerUploadFile);
 
 app.listen(3000 || process.env.PORT, () => {

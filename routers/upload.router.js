@@ -8,6 +8,5 @@ router.get("/", (req, res) => {
 });
 router.post("/deleteImages/:id", controllerUpload.deleteImages);
 router.post("/single", uploadStorage.single("image"), controllerUpload.single);
-router.get("/show", controllerUpload.getImages);
 
 module.exports = router;
